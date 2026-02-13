@@ -1,13 +1,22 @@
 Projeto Completo: Organogramas de Procedimentos DETRAN-PB ✅
+
 Prezado Diogo Rego, o projeto completo está pronto para publicação no seu GitHub!
 📦 Arquivos Entregues
+
 1. organogramas_detran_final.zip (17 MB)
+
 Arquivo ZIP contendo toda a estrutura do projeto:
+
 Script R completo
+
 README detalhado
+
 3 organogramas em alta resolução
+
 Comandos Git para Mac
+
 2. criar_organogramas.R
+
 Script R profissional com:
 ✅ Código limpo e bem comentado
 ✅ Função auxiliar para exportação
