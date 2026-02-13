@@ -341,7 +341,7 @@ Issues no GitHub
 Pull Requests com propostas de atualização
 
 3.
-E-mail para o autor
+E-mail para o autor diogo.silva.rego@academico.ufpb.br
 
 📄 Licença
 
@@ -359,8 +359,6 @@ UFPB pela formação acadêmica em Estatística
 Equipe do Setor de Policiamento pelo suporte e colaboração
 
 •
-Funcionária Solange e demais estagiários pela contribuição nos processos
-
 
 
 
