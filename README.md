@@ -1,396 +1,71 @@
-Mapeamento de Processos - DETRAN-PB
+# Geração de Organogramas de Procedimentos - DETRAN-PB
 
+Este repositório contém o script R e os resultados da geração de organogramas de procedimentos operacionais do DETRAN-PB. O objetivo deste projeto é padronizar e documentar os fluxos de trabalho internos, melhorando a comunicação, o treinamento e a eficiência dos processos.
 
+## 🎯 Importância e Benefícios
 
+A criação de organogramas de procedimentos é fundamental para a modernização e otimização dos serviços públicos. Os principais benefícios incluem:
 
+- **Padronização de Processos**: Garante que todos os funcionários sigam as mesmas etapas, reduzindo erros e inconsistências.
+- **Melhora na Comunicação Interna**: Facilita o entendimento dos fluxos de trabalho entre diferentes setores e níveis hierárquicos.
+- **Treinamento de Novos Colaboradores**: Serve como material didático visual para capacitar novos estagiários e funcionários de forma rápida e eficiente.
+- **Identificação de Gargalos**: Permite visualizar o fluxo completo e identificar pontos de lentidão ou ineficiência que podem ser otimizados.
+- **Base de Conhecimento**: Cria uma base de conhecimento documentada e de fácil consulta para todos os colaboradores.
+- **Transparência e Clareza**: Aumenta a transparência dos processos internos, facilitando a gestão e a tomada de decisões.
 
+## 📂 Estrutura do Repositório
 
+- **/organogramas_detran/**: Subpasta principal do projeto.
+  - `README.md`: Este arquivo, com a explicação do projeto.
+  - `criar_organogramas.R`: Script R para gerar os organogramas.
+  - **/resultados/**: Pasta com os organogramas gerados em formato PNG.
+    - `organograma_antifraude_detran_pb.png`: Fluxograma do procedimento de análise antifraude.
+    - `organograma_coleta_liberacao_veiculos_detran_pb.png`: Fluxograma do procedimento de coleta e liberação de veículos.
 
+## 🚀 Como Usar
 
+### Pré-requisitos
 
+- **R e RStudio**: É necessário ter o R e o RStudio instalados no seu computador.
+- **Terminal (Mac/Linux) ou Git Bash (Windows)**: Para clonar o repositório e enviar os arquivos.
 
+### Passos para Execução
 
+1. **Clone o repositório** para o seu computador:
+   ```bash
+   git clone https://github.com/Diogorego20/detran-policiamento-splas.git
+   ```
 
+2. **Navegue até a pasta do projeto**:
+   ```bash
+   cd detran-policiamento-splas/organogramas_detran
+   ```
 
+3. **Abra o RStudio** e execute o script `criar_organogramas.R`:
+   - O script instalará os pacotes necessários e gerará os organogramas na pasta `/resultados/`.
 
+4. **Envie os arquivos para o GitHub**:
+   ```bash
+   git add .
+   git commit -m "Adiciona script R e organogramas de procedimentos"
+   git push origin main
+   ```
 
+## 🛠️ Sobre o Script R
 
+O script `criar_organogramas.R` utiliza o pacote `DiagrammeR` para criar os fluxogramas a partir de uma sintaxe declarativa (DOT language). Ele é dividido em seções:
 
+1. **Instalação e Carregamento de Pacotes**: Prepara o ambiente R.
+2. **Função Auxiliar `exportar_organograma`**: Exporta os gráficos para PNG em alta resolução.
+3. **Organograma 1: Análise Antifraude**: Código para gerar o fluxograma de análise antifraude.
+4. **Organograma 2: Coleta e Liberação de Veículos**: Código para gerar o fluxograma de coleta e liberação.
 
+## 👨‍💻 Autor
 
+- **Diogo Rego**
+- Estudante de Estatística - UFPB
+- Estagiário | DETRAN-PB
+- GitHub: [Diogorego20](https://github.com/Diogorego20)
 
-
-
-
-
-
-
-
-
-
-
-Documentação visual e técnica dos processos operacionais do Departamento Estadual de Trânsito da Paraíba (DETRAN-PB), desenvolvida durante o programa de estágio em Estatística da UFPB.
-
-📋 Sobre o Projeto
-
-Este repositório contém organogramas profissionais que documentam e padronizam os fluxos de trabalho do DETRAN-PB. O projeto foi desenvolvido com o objetivo de melhorar a comunicação interna, facilitar o treinamento de novos colaboradores e identificar oportunidades de otimização nos processos.
-
-🎯 Objetivos
-
-•
-Padronização: Garantir que todos os funcionários sigam as mesmas etapas nos procedimentos
-
-•
-Transparência: Aumentar a clareza dos processos internos para melhor gestão
-
-•
-Treinamento: Servir como material didático visual para capacitação de equipes
-
-•
-Eficiência: Identificar gargalos e oportunidades de melhoria nos fluxos operacionais
-
-•
-Documentação: Criar uma base de conhecimento acessível e de fácil consulta
-
-🗂️ Estrutura do Repositório
-
-Plain Text
-
-
-mapeamento-processos-detran-pb/
-├── README.md                                          # Este arquivo
-├── organograma_antifraude_detran_pb.png              # Fluxo de análise antifraude
-├── organograma_coleta_liberacao_veiculos.png         # Processo de liberação de veículos
-├── organograma_conferencia_documentacao.png          # Conferência de documentação
-├── organograma_didatico_retirada_veiculo.png         # Versão didática para cidadãos
-├── organograma_ilustrativo_retirada_veiculo.png      # Versão ilustrativa para redes sociais
-├── organograma_operacional_completo.png              # Fluxo operacional completo
-├── organograma_procedimento_coleta.png               # Procedimento de coleta
-└── organograma_retirada_veiculo_cidadao.png          # Versão para o cidadão (estilo estrada)
-
-
-
-📊 Organogramas Disponíveis
-
-1. Análise Antifraude
-
-Fluxograma completo do procedimento de verificação de documentos e análise antifraude, incluindo:
-
-•
-Verificação preliminar de documentos
-
-•
-Validação de autenticidade digital
-
-•
-Análise de prazo de validade
-
-•
-Conferência em bases oficiais
-
-•
-Verificação de procuração e credenciamento
-
-Arquivo: organograma_antifraude_detran_pb.png
-
-2. Coleta e Liberação de Veículos
-
-Processo operacional completo desde a recepção do usuário até a saída do veículo do pátio, contemplando:
-
-•
-Recepção e triagem
-
-•
-Abertura de processo no PBDoc
-
-•
-Consulta de restrições
-
-•
-Análise de débitos
-
-•
-Vistoria de segurança
-
-•
-Emissão de guia de liberação
-
-Arquivo: organograma_coleta_liberacao_veiculos.png
-
-3. Retirada de Veículo - Versão Cidadão
-
-Organograma ilustrativo em formato didático para orientar o cidadão sobre como retirar seu veículo do pátio. Ideal para publicação no site institucional e redes sociais.
-
-Arquivos:
-
-•
-organograma_didatico_retirada_veiculo.png (versão horizontal)
-
-•
-organograma_ilustrativo_retirada_veiculo.png (versão estilo estrada)
-
-•
-organograma_retirada_veiculo_cidadao.png (versão vertical)
-
-4. Organograma Operacional Completo
-
-Visão consolidada de todos os processos com códigos de comando, sistemas utilizados, responsáveis e base legal.
-
-Arquivo: organograma_operacional_completo.png
-
-🛠️ Tecnologias e Ferramentas
-
-•
-Design: Ferramentas de design profissional assistidas por IA
-
-•
-Programação: R (DiagrammeR) para geração programática de fluxogramas
-
-•
-Versionamento: Git e GitHub
-
-•
-Documentação: Markdown
-
-📖 Como Usar
-
-Para Consulta Interna (Funcionários)
-
-1.
-Acesse o organograma correspondente ao seu setor
-
-2.
-Identifique a etapa do processo em que você está
-
-3.
-Siga as instruções e códigos de comando indicados
-
-4.
-Consulte os sistemas mencionados (PBDoc, APXI, AVA, etc.)
-
-Para Comunicação Externa (Cidadãos)
-
-1.
-Utilize os organogramas didáticos para orientar o público
-
-2.
-Publique nas redes sociais oficiais (@detrangovpb)
-
-3.
-Disponibilize no site institucional (detran.pb.gov.br)
-
-4.
-Imprima para distribuição nos pontos de atendimento
-
-Para Treinamento
-
-1.
-Use os organogramas como material de apoio em capacitações
-
-2.
-Projete em treinamentos presenciais
-
-3.
-Inclua em manuais de procedimentos
-
-4.
-Distribua para novos colaboradores
-
-🔄 Sistemas Utilizados
-
-Os organogramas fazem referência aos seguintes sistemas do DETRAN-PB:
-
-Sistema
-Descrição
-Uso
-PBDoc
-Protocolo e Gestão Documental
-Abertura e acompanhamento de processos
-APXI
-Sistema de Consultas e Regularizações
-Verificação de restrições, débitos e licenciamento
-AVA
-Sistema de Liberação de Veículos
-Emissão de guias de liberação
-Remajude
-Consulta de Restrições Judiciais
-Verificação de bloqueios judiciais
-Remait
-Consulta de Restrições Administrativas
-Verificação de bloqueios administrativos
-Arrecadação DETRAN
-Sistema de Pagamentos
-Compensação de débitos
-Emplacamento DETRAN
-Gestão de Placas
-Solicitação e instalação de placas
-
-
-
-
-📚 Base Legal
-
-Os procedimentos documentados seguem as seguintes normas:
-
-•
-Lei 9503/97 - Código de Trânsito Brasileiro (CTB)
-
-•
-Lei 11813/2020 - Estado da Paraíba
-
-•
-BIS 013/2023 - DETRAN-PB
-
-•
-Instrução de Serviço 003/2023/DS - Diretoria de Serviços
-
-•
-Resoluções CONTRAN - Conselho Nacional de Trânsito
-
-•
-Manual PBDoc - Protocolo Digital
-
-•
-Manual APXI - Sistema de Consultas
-
-💡 Benefícios para a Instituição
-
-Comunicação
-
-•
-✅ Redução de ruídos na comunicação entre setores
-
-•
-✅ Alinhamento de expectativas entre equipes
-
-•
-✅ Clareza sobre responsabilidades em cada etapa
-
-Eficiência
-
-•
-✅ Redução de retrabalho
-
-•
-✅ Identificação de gargalos operacionais
-
-•
-✅ Otimização de tempo de atendimento
-
-•
-✅ Padronização de procedimentos
-
-Gestão
-
-•
-✅ Base de conhecimento documentada
-
-•
-✅ Facilita auditorias e fiscalizações
-
-•
-✅ Suporte à tomada de decisões
-
-•
-✅ Histórico de processos e melhorias
-
-Treinamento
-
-•
-✅ Material didático visual e acessível
-
-•
-✅ Redução do tempo de capacitação
-
-•
-✅ Facilita integração de novos colaboradores
-
-•
-✅ Referência rápida para consultas
-
-👥 Equipe
-
-Autor: Diogo Rego
-Cargo: Estagiário
-Formação: Estatística - UFPB
-Instituição: DETRAN-PB | Governo do Estado da Paraíba
-Período: Fevereiro/2026
-
-Supervisor: Coronel Valter Lins
-Setor: Policiamento e Operações
-
-📞 Contato
-
-•
-E-mail Institucional: diogo.silva.rego@academico.ufpb.br
-
-•
-GitHub: @Diogorego20
-
-•
-LinkedIn: Diogo Rego
-
-🤝 Contribuições
-
-Este é um projeto de documentação interna do DETRAN-PB. Sugestões de melhorias podem ser enviadas através de:
-
-1.
-Issues no GitHub
-
-2.
-Pull Requests com propostas de atualização
-
-3.
-E-mail para o autor diogo.silva.rego@academico.ufpb.br
-
-📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-🙏 Agradecimentos
-
-•
-DETRAN-PB pela oportunidade de estágio e aprendizado
-
-•
-UFPB pela formação acadêmica em Estatística
-
-•
-Equipe do Setor de Policiamento pelo suporte e colaboração
-
-•
-
-
-
-<div align="center">
-
-DETRAN-PB | Governo do Estado da Paraíba
-Compromisso com a vida!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-Última atualização: Fevereiro/2026
-Versão: 1.0.0
-
+---
+*Este projeto foi desenvolvido como parte do programa de estágio no DETRAN-PB, com o objetivo de contribuir para a melhoria e documentação dos processos internos.*
